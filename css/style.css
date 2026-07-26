@@ -1,0 +1,467 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== CSS Variables (Bonus) ===== */
+:root {
+    --primary: #1a2a4a;      /* สีน้ำเงินเข้ม */
+    --secondary: #f39c12;    /* สีส้มทอง */
+    --bg-light: #f4f6f9;     /* สีเทาอ่อน */
+    --text-dark: #222;
+    --text-light: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --transition: 0.3s ease; /* Transition สำหรับ hover */
+    --font: 'Poppins', sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Navbar (Flexbox 1) ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 15px 40px;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+    border-bottom-color: var(--secondary);
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d68910;
+    transform: translateY(-3px); /* ขยับนิดๆ */
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--secondary);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+}
+
+/* ===== Hero (Flexbox 2) ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary), #2c3e6b);
+    color: var(--text-light);
+    min-height: 400px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-content {
+    flex: 1 1 50%;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* ===== Features (Grid 1) ===== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background: var(--bg-light);
+    padding: 10px;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* ===== Testimonials ===== */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* ทำเป็นวงกลม */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial-card h4 {
+    color: var(--primary);
+}
+
+/* ===== CTA ===== */
+.cta-section {
+    background: var(--secondary);
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: var(--radius);
+    margin: 20px 0;
+}
+
+.cta-section h2 {
+    color: var(--text-dark);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* ===== Product Grid (Grid 2) ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    padding-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 15px 15px 5px;
+    color: var(--primary);
+}
+
+.product-card p {
+    margin: 0 15px 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.product-card .price {
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 1.3rem;
+    margin: 0 15px;
+}
+
+/* ===== Promotion Banner ===== */
+.promo-banner {
+    background: linear-gradient(90deg, var(--primary), #2c3e6b);
+    color: var(--secondary);
+    text-align: center;
+    padding: 25px;
+    border-radius: var(--radius);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 30px 0;
+}
+
+/* ===== Contact Info & Form ===== */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1 1 40%;
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    flex: 1 1 50%;
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-family: var(--font);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* ===== Map ===== */
+.map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: var(--radius);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--primary);
+    color: var(--text-light);
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.footer-grid a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-grid a:hover {
+    color: var(--secondary);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #2c3e6b;
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* ===== Responsive (Bonus) ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .features-grid,
+    .product-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .promo-banner {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
